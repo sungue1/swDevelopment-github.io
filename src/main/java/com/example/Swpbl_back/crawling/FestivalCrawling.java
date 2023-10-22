@@ -1,11 +1,13 @@
 package com.example.Swpbl_back.crawling;
 
 import com.example.Swpbl_back.domain.Fstvl;
+import com.example.Swpbl_back.repository.FstvlRepositoryImp;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.JavascriptExecutor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FestivalCrawling {
@@ -14,12 +16,6 @@ public class FestivalCrawling {
     private WebElement element2;
     private WebElement element3;
 
-    private String title;
-    private String date;
-
-
-
-    private String loc;
 
     final String url;
 
@@ -40,7 +36,8 @@ public class FestivalCrawling {
 
     }
 
-    public void activateBot() {
+    public List<Fstvl> Run() {
+        List<Fstvl> FstvlList = null;
         try {
             driver.get(url);
             Thread.sleep(1000);
@@ -55,7 +52,7 @@ public class FestivalCrawling {
 
             JavascriptExecutor js = (JavascriptExecutor) driver;
             Thread.sleep(1000);
-            for(int k= 0; k<5;k++) {
+            for (int k = 0; k < 5; k++) {
                 js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
                 Thread.sleep(500);
             }
@@ -64,29 +61,42 @@ public class FestivalCrawling {
             //String sText =  js.executeScript("return document.documentElement.innerText;").toString();
             //System.out.println(sText);
 
-            String url = element3.findElement(By.tagName("a")).getAttribute("href");
+            //String url = element3.findElement(By.tagName("a")).getAttribute("href");
             List<WebElement> el3 = element2.findElements(By.tagName("li"));
-            Fstvl fstvl = new Fstvl();
+            FstvlList = new ArrayList<>();
             for (int i = 0; i < el3.size(); i++) {
-                //String title = el3.get(i).findElement(By.tagName("strong")).getText();
-                //String date = el3.get(i).findElement(By.className("date")).getText();
-                //String loc = el3.get(i).findElement(By.className("loc")).getText();
-                //System.out.println(title+date+loc);
-
+                String title = el3.get(i).findElement(By.tagName("strong")).getText();
+                String date = el3.get(i).findElement(By.className("date")).getText();
+                String loc = el3.get(i).findElement(By.className("loc")).getText();
+                String photo = (el3.get(i).findElement(By.tagName("img")).getAttribute("src"));
+                System.out.println(title+date+loc+photo);
+                Fstvl fstvl = new Fstvl();
                 fstvl.setTitle(title);
                 fstvl.setDate(date);
                 fstvl.setLocation(loc);
-                System.out.println(fstvl.getTitle());
+                fstvl.setPhoto(photo);
+                fstvl.setPrice("1");
+                fstvl.setPhone("1");
+                fstvl.setText("1");
+                fstvl.setFstvl_keyword("1");
+                FstvlList.add(fstvl);
 
+
+                //title, date, location, photo, price, phone, text, fstvl_keyword
             }
 
 
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
 
 
+        } finally {
+            return FstvlList;
+
         }
     }
+
+
+
 
 }

@@ -14,13 +14,7 @@ public class FestivalCrawling2 {
     private WebElement element;
     private WebElement element2;
     
-
-    private String title;
-    private String date;
-
-
-
-    private String loc;
+    private List<Fstvl> fstvl_list;
 
     final String url;
 
@@ -65,7 +59,7 @@ public class FestivalCrawling2 {
             for (WebElement element : el3){
                 System.out.println(element.getText());
             }
-            /*
+
             for (WebElement element : el3) {
                 driver.manage().timeouts().implicitlyWait(100000, TimeUnit.MILLISECONDS);
                 String url = element.findElement(By.tagName("a")).getAttribute("href");
@@ -85,7 +79,7 @@ public class FestivalCrawling2 {
                 System.out.println(e2.getText());
                 driver.navigate().to("https://korean.visitkorea.or.kr/kfes/list/wntyFstvlList.do");
             }
-            */
+
 
         }
         catch (InterruptedException e){ //sleep 잡아주기

@@ -12,15 +12,13 @@ public class SwpblBackApplication {
 
 	public static void main(String[] args) {
 
-		//SpringApplication.run(SwpblBackApplication.class, args) ;
-		//TrainCrawling tr = new TrainCrawling();
-		//Date Date = new Date();
+		SpringApplication.run(SwpblBackApplication.class, args) ;
+		//Go go = new Go();
 
-		//tr.date = Date.td;
-		//tr.Run();
 
-		//FestivalCrawling2 bot1 = new FestivalCrawling2();
-		//bot1.activateBot();
+		//FestivalCrawling bot1 = new FestivalCrawling();
+		//FstvlRepositoryImp fstvlRepositoryImp = new FstvlRepositoryImp();
+		//bot1.Run();
 	}
 
 }
