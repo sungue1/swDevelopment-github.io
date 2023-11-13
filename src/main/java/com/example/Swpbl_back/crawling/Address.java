@@ -33,7 +33,7 @@ public class Address {
             loc = "세종특별자치시";
         }
         else if (departure.indexOf("경기도") == 0 || departure.indexOf("강원도") == 0) {
-            if (departure.charAt(7) != ' ') {
+            if (departure.charAt(6) != '시' && departure.charAt(6) != '군') {
                 loc = departure.substring(4, 7);
             }
             else {
@@ -41,12 +41,7 @@ public class Address {
             }
         }
         else {
-            if (departure.charAt(8) != ' ') {
-                loc = departure.substring(5, 8);
-            }
-            else {
-                loc = departure.substring(5, 7);
-            }
+            loc = departure.substring(5, 7);
         }
 
         // 도착지
@@ -75,7 +70,7 @@ public class Address {
             fes = "세종특별자치시";
         }
         else if (arrive.indexOf("경기도") == 0 || arrive.indexOf("강원도") == 0) {
-            if (arrive.charAt(7) != ' ') {
+            if (departure.charAt(6) != '시' && departure.charAt(6) != '군') {
                 fes = arrive.substring(4, 7);
             }
             else {
@@ -83,12 +78,7 @@ public class Address {
             }
         }
         else {
-            if (arrive.charAt(8) != ' ') {
-                fes = arrive.substring(5, 8);
-            }
-            else {
-                fes = arrive.substring(5, 7);
-            }
+            fes = arrive.substring(5, 7);
         }
     }
 }

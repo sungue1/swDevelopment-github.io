@@ -18,19 +18,18 @@ public class UserMemoryRepository implements UserRepository{
         return user;
     }
 
-        @Override
-        public Optional<User> findById(Long id) {
+    @Override
+    public Optional<User> findById(Long id) {
 
-            return Optional.ofNullable(store.get(id));
-        }
+        return Optional.ofNullable(store.get(id));
+    }
 
 
-        @Override
-        public List<User> findAll() {
+    @Override
+    public List<User> findAll() {
             return new ArrayList<>(store.values());
         }
-
-        public void clearStore() {
+    public void clearStore() {
         store.clear();
     }
 }

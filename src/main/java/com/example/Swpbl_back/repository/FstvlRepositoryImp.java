@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;
@@ -13,8 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
-public class FstvlRepositoryImp {
+public class FstvlRepositoryImp implements FstvlRepository {
     private final JdbcTemplate jdbcTemplate;
 
 
@@ -24,7 +24,7 @@ public class FstvlRepositoryImp {
 
     //create
 
-    public String save(Fstvl fstvlform) {
+    public Fstvl save(Fstvl fstvlform) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(jdbcTemplate);
         jdbcInsert.withTableName("fstvl").usingGeneratedKeyColumns("fstvl_id");
         Map<String, Object> parameters = new HashMap<>();
@@ -33,22 +33,25 @@ public class FstvlRepositoryImp {
         parameters.put("date", fstvlform.getDate());
         parameters.put("location", fstvlform.getLocation());
         parameters.put("photo", fstvlform.getPhoto());
-        parameters.put("price", fstvlform.getPrice());
-        parameters.put("phone", fstvlform.getPhone());
-        parameters.put("text", fstvlform.getText());
-        parameters.put("fstvl_keyword", fstvlform.getFstvl_keyword());
+       // parameters.put("price", fstvlform.getPrice());
+        //parameters.put("phone", fstvlform.getPhone());
+        //parameters.put("text", fstvlform.getText());
+        //parameters.put("fstvl_keyword", fstvlform.getFstvl_keyword());
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
         //fstvlform.setFstvl_id(key.intValue());
 
-        return "저장완료";
+        return fstvlform;
     }
+
+
+
     public List<Fstvl> findAll() {
 
         return jdbcTemplate.query("select * from Fstvl", fstvlRowMapper());
     }
 
 
-    public Fstvl findId(int id){
+    public Fstvl findById(Long id){
         return jdbcTemplate.queryForObject("select * from Fstvl where fstvl_id=?", fstvlRowMapper(), id);
     }
 
@@ -61,10 +64,10 @@ public class FstvlRepositoryImp {
             fstvl.setDate(rs.getString("date"));
             fstvl.setLocation(rs.getString("location"));
             fstvl.setPhoto(rs.getString("photo"));
-            fstvl.setPrice(rs.getString("price"));
-            fstvl.setPhone(rs.getString("phone"));
-            fstvl.setText(rs.getString("text"));
-            fstvl.setText(rs.getString("fstvl_keyword"));
+           // fstvl.setPrice(rs.getString("price"));
+            //fstvl.setPhone(rs.getString("phone"));
+            //fstvl.setText(rs.getString("text"));
+            //fstvl.setText(rs.getString("fstvl_keyword"));
 
             return fstvl;
         };

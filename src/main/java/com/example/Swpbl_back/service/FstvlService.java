@@ -20,7 +20,7 @@ public class FstvlService {
     }
 
 
-    public List<Fstvl> findAllFstvl(){
+    public List<Fstvl> findDefaultFstvl(){
         FestivalCrawling bot1 = new FestivalCrawling();
         List<Fstvl> FstvlList = bot1.Run();
         for (Fstvl fstvl:FstvlList){

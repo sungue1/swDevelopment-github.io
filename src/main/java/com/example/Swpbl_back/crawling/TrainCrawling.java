@@ -33,7 +33,7 @@ public class TrainCrawling {
         System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
 
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--disable-popup-blocking");
 
         driver = new ChromeDriver(options);

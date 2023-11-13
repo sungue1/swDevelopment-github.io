@@ -14,7 +14,7 @@ public class FestivalCrawling {
     final WebDriver driver;
     private WebElement element;
     private WebElement element2;
-    private WebElement element3;
+
 
 
     final String url;
@@ -26,6 +26,7 @@ public class FestivalCrawling {
         System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
 
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
         options.addArguments("--start-maximized");
         options.addArguments("--disable-popup-blocking");
 
@@ -80,6 +81,8 @@ public class FestivalCrawling {
                 fstvl.setText("1");
                 fstvl.setFstvl_keyword("1");
                 FstvlList.add(fstvl);
+
+
 
 
                 //title, date, location, photo, price, phone, text, fstvl_keyword

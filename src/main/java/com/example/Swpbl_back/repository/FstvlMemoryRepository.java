@@ -16,7 +16,9 @@ public class FstvlMemoryRepository implements FstvlRepository {
     public Fstvl save(Fstvl fstvl) {
         fstvl.setFstvl_id(++sequence);
         store.put(fstvl.getFstvl_id(),fstvl);
+        System.out.println("난 메모리야");
         return fstvl;
+
     }
 
     @Override
