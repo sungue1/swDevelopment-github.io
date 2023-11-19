@@ -14,7 +14,6 @@ public class TrainCrawling {
     private WebElement element2;
     private WebElement element3;
     private WebElement element4;
-    private WebElement element5;
     private WebElement table;
     private WebElement tbody;
     final String url;
@@ -124,11 +123,12 @@ public class TrainCrawling {
             int dep_len = query_dep.length();
             int arr_len = query_arr.length();
 
+            int i = 0;
+
             while (true) {
                 table = driver.findElement(By.id("tableResult"));
                 tbody = table.findElement(By.tagName("tbody"));
                 java.util.List<WebElement> trList = tbody.findElements(By.tagName("tr"));
-                int i = 0;
                 for (WebElement tr : trList) {
                     java.util.List<WebElement> tdList = tr.findElements(By.tagName("td"));
 
@@ -165,7 +165,6 @@ public class TrainCrawling {
                     try {
                         element2 = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div[1]/form[1]/div/div[4]/table[2]/tbody/tr/td/a[2]"));
                         String x = element2.findElement(By.tagName("img")).getAttribute("alt");
-                        System.out.println(x);
                         if (x.equals("다음")) {
                             element2.click();
                         } else {

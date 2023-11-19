@@ -63,8 +63,8 @@ public class Location {
         String[] corr = {loc, fes};
 
         for (String str1 : corr) {
-            if (str1.equals("서울특별시")) {
-                int num = Arrays.asList(corr).indexOf("서울특별시");
+            if (str1.equals("서울")) {
+                int num = Arrays.asList(corr).indexOf("서울");
                 switch (num) {
                     case 0:
                         dep = "서울";
@@ -73,8 +73,8 @@ public class Location {
                         arr = "서울";
                 }
             }
-            else if (str1.equals("인천광역시")) {
-                int num = Arrays.asList(corr).indexOf("인천광역시");
+            else if (str1.equals("인천")) {
+                int num = Arrays.asList(corr).indexOf("인천");
                 switch (num) {
                     case 0:
                         dep = "서울";
@@ -82,8 +82,8 @@ public class Location {
                         arr = "서울";
                 }
             }
-            else if (str1.equals("대전광역시")) {
-                int num = Arrays.asList(corr).indexOf("대전광역시");
+            else if (str1.equals("대전")) {
+                int num = Arrays.asList(corr).indexOf("대전");
                 switch (num) {
                     case 0:
                         dep = "대전";
@@ -91,8 +91,8 @@ public class Location {
                         arr = "대전";
                 }
             }
-            else if (str1.equals("대구광역시")) {
-                int num = Arrays.asList(corr).indexOf("대구광역시");
+            else if (str1.equals("대구")) {
+                int num = Arrays.asList(corr).indexOf("대구");
                 switch (num) {
                     case 0:
                         dep = "동대구";
@@ -100,8 +100,8 @@ public class Location {
                         arr = "동대구";
                 }
             }
-            else if (str1.equals("광주광역시")) {
-                int num = Arrays.asList(corr).indexOf("광주광역시");
+            else if (str1.equals("광주")) {
+                int num = Arrays.asList(corr).indexOf("광주");
                 switch (num) {
                     case 0:
                         dep = "광주송정";
@@ -109,8 +109,8 @@ public class Location {
                         arr = "광주송정";
                 }
             }
-            else if (str1.equals("울산광역시")) {
-                int num = Arrays.asList(corr).indexOf("울산광역시");
+            else if (str1.equals("울산")) {
+                int num = Arrays.asList(corr).indexOf("울산");
                 switch (num) {
                     case 0:
                         dep = "울산(통도사)";
@@ -118,8 +118,8 @@ public class Location {
                         arr = "울산(통도사)";
                 }
             }
-            else if (str1.equals("부산광역시")) {
-                int num = Arrays.asList(corr).indexOf("부산광역시");
+            else if (str1.equals("부산")) {
+                int num = Arrays.asList(corr).indexOf("부산");
                 switch (num) {
                     case 0:
                         dep = "부산";
@@ -127,8 +127,8 @@ public class Location {
                         arr = "부산";
                 }
             }
-            else if (str1.equals("세종특별자치시")) {
-                int num = Arrays.asList(corr).indexOf("세종특별자치시");
+            else if (str1.equals("세종시")) {
+                int num = Arrays.asList(corr).indexOf("세종시");
                 switch (num) {
                     case 0:
                         dep = "오송";

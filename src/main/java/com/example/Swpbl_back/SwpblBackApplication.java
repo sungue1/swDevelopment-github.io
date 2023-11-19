@@ -1,9 +1,7 @@
 package com.example.Swpbl_back;
 
-import com.example.Swpbl_back.crawling.FestivalCrawling;
-import com.example.Swpbl_back.crawling.FestivalCrawling2;
-import com.example.Swpbl_back.crawling.TrainCrawling;
-import com.example.Swpbl_back.crawling.Date;
+import com.example.Swpbl_back.crawling.*;
+import com.example.Swpbl_back.repository.FstvlRepositoryImp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
