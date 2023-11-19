@@ -16,9 +16,11 @@ public class SwpblBackApplication {
 		//Go go = new Go();
 
 
-		//FestivalCrawling bot1 = new FestivalCrawling();
-		//FstvlRepositoryImp fstvlRepositoryImp = new FstvlRepositoryImp();
-		//bot1.Run();
-	}
 
+		//FstvlRepositoryImp fstvlRepositoryImp = new FstvlRepositoryImp();
+
+		//detailcrawling test
+		//FestivalCrawling bot1 = new FestivalCrawling();
+		//bot1.detailRun("https://cdn.visitkorea.or.kr/kfes/upload/contents/db/300_268ee267-d483-4e3b-9e27-3594f6d9c5f6_1.jpg");
+	}
 }

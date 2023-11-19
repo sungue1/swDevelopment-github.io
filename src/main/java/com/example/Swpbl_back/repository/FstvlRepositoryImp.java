@@ -14,11 +14,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-public class FstvlRepositoryImp implements FstvlRepository {
+public class FstvlRepositoryImp  {
     private final JdbcTemplate jdbcTemplate;
 
 
     public FstvlRepositoryImp(DataSource dataSource) {
+
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 

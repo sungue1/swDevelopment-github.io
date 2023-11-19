@@ -31,34 +31,42 @@ public class Controller {
     public List<Fstvl> defaultFstvl() {
         return  fstvlService.findDefaultFstvl();
     }
-/*
-    @GetMapping("/main")
-    public List<Fstvl> wantedFstvl() {
-        return  ;
+
+    @GetMapping("/main1")
+    public String wantedFstvl() {
+        return  "리스트";
     }
 
- */
+    @GetMapping("/main1/{photo}")
+    public Fstvl detailFstvl(@PathVariable("photo") String photo) {
+        return  fstvlService.findDetailFstvl(photo);
+    }
+    @GetMapping("/main/{id}")
+    public Fstvl detailFstvl(@PathVariable("id") Long id) {
+        return  fstvlService.findDetailFstvl2(id);
+    }
 
 
     //----------------------------------------------------------------------------------------------------------
 
     //유저가 정보를 입력
     @PutMapping("/main")
-    public User updateForm(@RequestBody User user) {
+    public User userUpdate(@RequestBody User user) {
         return userService.UserInputSave(user);
     }
 
     //유저 리스트 확인
     @GetMapping("/main2")
-    public List<User> UserAll() {
+    public List<User> userAll() {
         return userService.findAllUser();
     }
 
     //이미지소스 ,fstvl_id  fstvl도착위치   //train table 축제상세정보
 
 
-    // 열차편 요청
+
 //----------------------------------------------------------------------------------------------------------
+    // 열차편 요청
     @GetMapping ("/detail/{user_id}/{fstvl_id}")
     public List TrainView(@PathVariable("user_id") Long user_id, @PathVariable("fstvl_id") Long fstvl_id) {
         return trainService.getTrainTable(user_id, fstvl_id);
