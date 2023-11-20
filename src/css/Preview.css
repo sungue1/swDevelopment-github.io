@@ -1,0 +1,68 @@
+.pre_map {
+    /* 지도 이미지 */
+
+    position: absolute;
+    left: calc(50% - 400px/2 - 92.43px);
+    top: 150px;
+}
+
+.background {
+    /* 배경사진 */
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    height : 100%;
+    width : 100%;
+}
+
+.CTP_text {
+    /* Custom Travel Planer */
+
+    position: absolute;
+    left: 26px;
+    top: 425px;
+
+    font-family: 'Podkova';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 80px;
+
+    color: #FFFFFF;
+}
+
+.CTP {
+    position: absolute;
+    left: 0px;
+    top: 418px;
+}
+
+.find_button {
+    /* 축제 찾기 뒷배경 */
+
+    position: absolute;
+    background: #D9D9D9;
+    border-radius: 100px;
+
+
+    /* 축제찾기 텍스트*/
+
+    position: absolute;
+    width: 260px;
+    height: 90px;
+    left: calc(50% - 425px/2 + 527px);
+    top: 575px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #000000;
+}

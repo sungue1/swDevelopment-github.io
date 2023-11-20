@@ -1,0 +1,31 @@
+.notfound {
+    /* notfound 1 */
+
+    position: absolute;
+    width: 648px;
+    height: 1080px;
+    left: 636px;
+    top: 0px;
+}
+
+.not_text {
+    /* 너, 잘못 들어와써 */
+
+    position: absolute;
+    width: 395px;
+    height: 58px;
+    left: 250px;
+    top: 494px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
