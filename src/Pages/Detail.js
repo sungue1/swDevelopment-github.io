@@ -2,17 +2,19 @@ import {useLocation, useParams} from "react-router-dom";
 import Fstvl from "../Component/Fstvl";
 import {useState , useEffect} from "react";
 import axios from "axios";
-// import DataTable from './components/dataTable';
+// import React, { useState, useEffect } from 'react';
+import './css/table.css';
+import DataTable from './components/dataTable';
 
 
 function Detail() {
     const {title} = useParams();
     const {state} = useLocation();
-    // const [selection, setSelection] = useState([]);
-    // useEffect(() => {
-    //     console.log(selection);
-    // }, [selection]);
-    const headers = [
+    const [selection, setSelection] = useState([]);
+    useEffect(() => {
+        console.log(selection);
+    }, [selection]);
+    const headers = [    // Table 코드
         {
             text: 'Name',
             value: 'name',
@@ -86,12 +88,11 @@ function Detail() {
             <div className='fstvl-icon'>
                 <img src={process.env.PUBLIC_URL + '/information.png'} width = '65px' height = '50px'/>
             </div>
-            {/*<DataTable*/}
-            {/*    headers={headers}*/}
-            {/*    items={items}*/}
-            {/*    selectable={true}*/}
-            {/*    // updateSelection={setSelection}*/}
-            {/*/>*/}
+            <DataTable
+                headers={headers}
+                items={items}
+                updateSelection={setSelection}
+            />
             </div>
     );
 }
