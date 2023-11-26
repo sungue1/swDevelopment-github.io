@@ -1,15 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { useNavigate } from "react-router-dom";
-import axios from 'axios';
 
 export default function Fstvl(props) {
 
     const navigate = useNavigate();
 
+    const [fstvl, setFstvl] = useState(null);
+
     const onClickFstvlItem = () => {
         navigate(`/main/detail/${props.title}`, {
             state : props
         })
+        fetch(`http://localhost:8080/main/${props.fstvl_id}`,{
+            method: "POST",
+            body: JSON.stringify(props.fstvl_id)
+        })
+            .then((response) => response.json())
+            .then((data) => setFstvl(data));
     }
 
     return(

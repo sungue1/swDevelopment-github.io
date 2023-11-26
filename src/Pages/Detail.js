@@ -1,68 +1,83 @@
 import {useLocation, useParams} from "react-router-dom";
-import Fstvl from "../Component/Fstvl";
 import {useState , useEffect} from "react";
-import axios from "axios";
-// import React, { useState, useEffect } from 'react';
-import './css/table.css';
-import DataTable from './components/dataTable';
+import '../css/Table.css';
+import DataTable from '../Component/dataTable';
 
+const headers0 = [
+    {
+        text: '출발역',
+        value: 'dep_sta',
+    },
+    {
+        text: '도착역',
+        value: 'arr_sta',
+    },
+];
+
+const items0 = [
+    {
+        dep_sta: '부산역',
+        arr_sta: '오송역',
+    },
+];
+
+
+const headers1 = [
+    {
+        text: '출발시간',
+        value: 'etd',
+    },
+    {
+        text: '도착시간',
+        value: 'eta',
+    },
+    {
+        text: '가격',
+        value: 'price',
+    },
+    {
+        text: '이동시간',
+        value: 'duration',
+    },
+];
+const items1 = [
+    {
+        etd: '06:13',
+        eta: '09:00',
+        price: '38000',
+        duration: '02:47',
+    },
+    {
+        etd: '05:55',
+        eta: '07:41',
+        price: '34500',
+        duration: '01:46',
+    },
+    {
+        etd: '06:40',
+        eta: '08:25',
+        price: '34500',
+        duration: '01:45',
+    },
+    {
+        etd: '07:16',
+        eta: '09:06',
+        price: '34500',
+        duration: '01:50',
+    },
+];
 
 function Detail() {
     const {title} = useParams();
     const {state} = useLocation();
-    const [selection, setSelection] = useState([]);
+    const [selection0, setSelection0] = useState([]);
+    const [selection1, setSelection1] = useState([]);
     useEffect(() => {
-        console.log(selection);
-    }, [selection]);
-    const headers = [    // Table 코드
-        {
-            text: 'Name',
-            value: 'name',
-        },
-        {
-            text: 'Version',
-            value: 'version',
-        },
-        {
-            text: 'Launch Date',
-            value: 'launch',
-        },
-    ];
-    const items = [
-        {
-            name: 'React',
-            version: '18.2.0',
-            launch: '2013-05-29',
-        },
-        {
-            name: 'Vue',
-            version: '3.2.45',
-            launch: '2014-02',
-        },
-        {
-            name: 'jQuery',
-            version: '3.3',
-            disabled: true,
-            launch: '2006-08-26',
-        },
-        {
-            name: 'Svelte',
-            version: '3.53.1',
-            launch: '2016-11-26',
-        },
-    ];
-
-    const [fstvl, setFstvl] = useState(null);
-
+        console.log(selection0);
+    }, [selection0]);
     useEffect(() => {
-        fetch(`http://localhost:8080/main/${state.fstvl_id}`,{
-            method: "POST",
-            body: JSON.stringify(state.fstvl_id)
-        })
-            .then((response) => response.json())
-            .then((data) => setFstvl(data));
-    },[]);
-
+        console.log(selection1);
+    }, [selection1]);
 
     return (
         <div>
@@ -78,22 +93,30 @@ function Detail() {
             <div className='location-icon'>
                 <img src={process.env.PUBLIC_URL + '/location.png'} width = '45px' height = '50px'/>
             </div>
-            <div className='price-info'>{fstvl.price}</div>
+            <div className='price-info'>{state.price}</div>
             <div className='price-icon'>$</div>
-            <div className='phone-info'>{fstvl.phone}</div>
+            <div className='phone-info'>{state.phone}</div>
             <div className='phone-icon'>
                 <img src={process.env.PUBLIC_URL + '/phone.png'} width = '45px' height = '50px'/>
             </div>
-            <div className='fstvl-info'>{fstvl.text}</div>
+            <div className='fstvl-info'>{state.text}</div>
             <div className='fstvl-icon'>
                 <img src={process.env.PUBLIC_URL + '/information.png'} width = '65px' height = '50px'/>
             </div>
+
+            <div className="Table_lo">
             <DataTable
-                headers={headers}
-                items={items}
-                updateSelection={setSelection}
+                headers={headers0}
+                items={items0}
+                updateSelection={setSelection0}
+            />
+            <DataTable
+                headers={headers1}
+                items={items1}
+                updateSelection={setSelection1}
             />
             </div>
+        </div>
     );
 }
 

@@ -142,3 +142,15 @@
     left: calc(50% - 1167px/2 - 9.5px);
     top: 725px;
 }
+
+.Table_lo{
+    position: absolute;
+    left: calc(50% - 1167px/2 - 9.5px);
+    top: 1000px;
+}
+
+.Table_time{
+    position: absolute;
+    left: calc(50% - 1167px/2 - 9.5px);
+    top: 725px;
+}
