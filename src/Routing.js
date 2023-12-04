@@ -3,7 +3,7 @@ import Main from "./Pages/Main";
 import Detail from "./Pages/Detail";
 import Header from "./Component/Header";
 import Preview from "./Pages/Preview";
-import Notfound from "./Pages/Notfound"
+import Notfound from "./Pages/Notfound";
 function Routing() {
     return (
         <div className = 'root-warp'>

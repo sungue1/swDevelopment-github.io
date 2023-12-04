@@ -1,0 +1,34 @@
+.key_title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.key_button_save{
+    position: absolute;
+    left: calc(50% - 180px/2 + 340px);
+    top: 510px;
+
+    border-color: rgba(255, 255, 255, 0);
+    background: #FFFFFF;
+
+    width: 75px;
+    height: 50px;
+    border-radius: 10px;
+
+    font-size: 20px;
+}
+
+.key_button_close{
+    position: absolute;
+    left: calc(50% - 180px/2 + 450px);
+    top: 510px;
+
+    border-color: rgba(255, 255, 255, 0);
+    background: #FFFFFF;
+
+    width: 75px;
+    height: 50px;
+    border-radius: 10px;
+
+    font-size: 20px;
+}

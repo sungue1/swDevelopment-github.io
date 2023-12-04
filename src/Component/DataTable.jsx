@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import '../css/DataTable.css'
 
 export default function DataTable({
                                       headers,
@@ -56,6 +57,7 @@ export default function DataTable({
     const isSelectedAll = () => {
         return selection.size === getAbledItems(items).length;
     };
+
     return (
         <table>
             <thead>

@@ -1,6 +1,14 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import '../css/Preview.css';
 
 function Preview() {
+    const [isHovering, setIsHovering] = useState(false);
+    const navigate = useNavigate();
+    const onClickItem = () => {navigate('/main')}
+    const handleMouseOver = () => {setIsHovering(true)};
+    const handleMouseOut = () => {setIsHovering(false)};
+
     return (
         <div>
             <div className='background'>
@@ -18,9 +26,12 @@ function Preview() {
                 <div>Planner</div>
             </div>
 
-            <Link to='main'>
-                <div className='find_button'>축제찾기</div>
-            </Link>
+            <div
+                className={isHovering ? 'find_button_hover' : 'find_button_nohover'}
+                onClick = {onClickItem}
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+            >축제찾기</div>
         </div>
     );
 }

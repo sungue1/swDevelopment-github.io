@@ -38,7 +38,7 @@
     top: 418px;
 }
 
-.find_button {
+.find_button_nohover {
     /* 축제 찾기 뒷배경 */
 
     position: absolute;
@@ -65,4 +65,35 @@
     justify-content: center;
 
     color: #000000;
+    transition: all 0.1s linear;
+}
+
+.find_button_hover{
+    /* 축제찾기 */
+
+    position: absolute;
+    background: #00155F;
+    border-radius: 100px;
+
+
+    /* 축제찾기 */
+
+    position: absolute;
+    width: 280px;
+    height: 110px;
+    left: calc(50% - 450px/2 + 527px);
+    top: 562px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 53px;
+    line-height: 64px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    color: #FFFFFF;
+    transition: all 0.1s linear;
 }

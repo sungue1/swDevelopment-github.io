@@ -28,8 +28,12 @@
     height: 63px;
     left: calc(50% - 370px/2 - 106px);
     top: 239px;
+    font-size: 20px;
+    text-align: center;
+    line-height : 63px;
+    color: #ffffff;
 
-    background: #000000;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 30px;
 }
 
@@ -37,27 +41,14 @@
     /* 키워드 아이콘 */
 
     position: absolute;
-    width: 41px;
-    height: 41px;
-    left: calc(50% - 41px/2 - 344.5px);
-    top: 338px;
-
-    font-family: 'Podkova';
-    font-style: normal;
     font-weight: 700;
     font-size: 55px;
-    line-height: 61px;
-    display: flex;
-    align-items: center;
+    line-height: 45px;
     text-align: center;
 
     color: #000000;
 
-    /* 아이콘 배경(키워드) */
-
     box-sizing: border-box;
-
-    position: absolute;
     width: 55px;
     height: 55px;
     left: calc(50% - 55px/2 - 345.5px);
@@ -75,8 +66,11 @@
     height: 63px;
     left: calc(50% - 497px/2 - 40.5px);
     top: 327px;
+    text-align: center;
+    line-height: 63px;
+    font-size: 10px;
 
-    background: #000000;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 30px;
 
 }
@@ -132,4 +126,37 @@
     align-items: center;
 
     color: #000000;
+}
+
+.key_modal_size {
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    left: calc(50% - 1000px/2);
+    top: calc(50% - 600px/2);
+    border-radius: 30px;
+
+    background-color: rgb(200, 255, 159);
+}
+
+.location_modal_size {
+    position: absolute;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    left: calc(50% - 500px/2);
+    top: calc(50% - 200px/2);
+    border-radius: 10px;
+    border-color: rgb(0, 0, 0);
+
+    background-color: rgb(255, 255, 255);
+}
+
+.calendar_modal_size {
+    position: absolute;
+    text-align: center;
+    /*임시*/
+    left: 30%;
+    top: 30%;
+    /*임시*/
 }

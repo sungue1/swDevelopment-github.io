@@ -1,0 +1,32 @@
+.keyHover {
+    width: 200px;
+    height: 70px;
+    margin: 20px;
+    border-radius: 50px;
+    border-color: #00FF19;
+    font-size: 25px;
+
+    background-color: #00FF19;
+}
+
+.key_button {
+    width: 200px;
+    height: 70px;
+    margin: 20px;
+    border-radius: 50px;
+    border-color: rgb(200, 255, 159);
+    font-size: 25px;
+
+    background-color: rgb(200, 255, 159);
+}
+
+.keyClick {
+    width: 200px;
+    height: 70px;
+    margin: 20px;
+    border-radius: 50px;
+    border-color: rgb(0, 255, 25);
+    font-size: 25px;
+
+    background-color: rgb(0, 255, 25);
+}
