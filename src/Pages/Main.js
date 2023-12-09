@@ -19,20 +19,53 @@ function Main() {
     const [text, setText] = useState('이 달의 축제');
     const openKeySearchModal = () => {setIsKeySearchModalOpen(true)}
     const closeKeySearchModal = () => {setIsKeySearchModalOpen(false)}
-    const openLocationModal = () => {setIsLocationModalOpen(true)}
-    const closeLocationModal = () => {setIsLocationModalOpen(false)}
     const openCalendarModal = () => {setIsCalendarModalOpen(true)}
     const closeCalendarModal = () => {setIsCalendarModalOpen(false)}
+    const openLocationModal = () => {
+        setIsLocationModalOpen(true);
+        setLoading(false);
+    }
+    const closeLocationModal = () => {
+        setIsLocationModalOpen(false);
+        if (!fstvls) {
+            setLoading(true);
+        }
+    }
     const getCalendarDate = date => {setCalendarDate(date)}
     const getKeywords = word => {setKeyWordList(word)}
+    let keyWord;
 
     Modal.setAppElement('#root')
 
-    const fetchData = async () => {
+    const viewKey = () => {
+        if (keyWordList === ['여기를 눌러서 키워드를 선택하세요']) {
+            return '여기를 눌러서 키워드를 선택하세요'
+        }
+        else {
+            return keyWordList.join();
+        }
+    }
+
+    const onClickSearchItem = async () => {
         try {
             setLoading(true);
-            const response_fstvl = await axios.get('http://localhost:8080/main');
-            setFstvl(response_fstvl.data);
+            keyWord = keyWordList.join();
+            const response = await axios.post(`http://localhost:8080/main/${keyWord}/${calendarDate}`);
+            setFstvl(response.data);
+        } catch (error){
+            console.log(error);
+        } finally {
+            setText("필터링 결과");
+            setLoading(false);
+        }
+    }
+
+    const fetchData = async () => {
+        try {
+            if(!fstvls) {
+                const response_fstvl = await axios.get('http://localhost:8080/main');
+                setFstvl(response_fstvl.data);
+            }
         } catch (error) {
             console.error('Error fetching data:', error);
         } finally {
@@ -52,22 +85,6 @@ function Main() {
         // 컴포넌트가 unmount 될 때 clearTimeout을 통해 타이머 해제
         return () => clearTimeout(timeoutId);
     }, []);
-
-    const onClickSearchItem = async () => {
-        try {
-            setLoading(true);
-            let keyWord = keyWordList.join();
-            console.log(keyWord);
-            console.log(calendarDate)
-            const response = await axios.post(`http://localhost:8080/main/${keyWord}/${calendarDate}`);
-            setFstvl(response.data);
-        } catch (error){
-            console.log(error);
-        } finally {
-            setText("필터링 결과");
-            setLoading(false);
-        }
-    }
 
     return (
 
@@ -100,8 +117,10 @@ function Main() {
                 >
                     <Location_Modal closeModal={closeLocationModal}/>
                 </Modal>
-                <div className="key_date" />
-                <div className="date_icon"></div>
+                <div className="key_date"/>
+                <div className="date_icon">
+                    <img src = {process.env.PUBLIC_URL + '/Calendar.png'} width = '55px' height = '55px'/>
+                </div>
                 <div className="date_search" onClick={openCalendarModal}>{calendarDate}</div>
                 {/* 달력 모달 */}
                 <Modal className = 'calendar_modal_size'
@@ -112,7 +131,7 @@ function Main() {
                     <Calendar_Modal closeModal={closeCalendarModal} getCalendarDate={getCalendarDate}/>
                 </Modal>
                 <div className="key_icon">#</div>
-                <div className="key_search" onClick={openKeySearchModal}>{keyWordList}</div>
+                <div className="key_search" onClick={openKeySearchModal}>{viewKey()}</div>
                 {/* 키워드 모달 */}
                 <Modal
                     className='key_modal_size'

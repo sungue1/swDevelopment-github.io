@@ -53,13 +53,15 @@ function Calendar_Modal(props) {
                 : null;
         }
     };
+    let [date ] = '';
 
     const selectedDatesInfo = () => {
         if (selectedStartDate && selectedEndDate) {
             const format = 'YYYY.MM.DD';
             const startDate = moment(selectedStartDate).format(format);
             const endDate = moment(selectedEndDate).format(format);
-            return `${startDate}~${endDate}`;
+            date = `${startDate}~${endDate}`;
+            props.closeModal();
         } else if (selectedStartDate) {
             const format = 'YYYY.MM.DD';
             return moment(selectedStartDate).format(format);
@@ -67,16 +69,14 @@ function Calendar_Modal(props) {
             return '날짜를 선택하세요.';
         }
     };
-    const [date , setDate] = useState('');
 
     useEffect(() => {
-        setDate(selectedDatesInfo());
         props.getCalendarDate(date);
         console.log(date);
     }, [selectedDatesInfo]);
 
     return (
-        <div>
+        <div className = "custom-calendar-container">
             <Calendar
                 onChange={handleDateClick}
                 value={value}
@@ -87,6 +87,6 @@ function Calendar_Modal(props) {
             <button onClick={props.closeModal}>닫기</button>
         </div>
     );
-};
+}
 
 export default Calendar_Modal;

@@ -1,56 +1,47 @@
 .title-info {
-    /* 축제이름 */
-
     box-sizing: border-box;
-
     position: absolute;
-    width: 550px;
-    height: 70px;
-    left: calc(50% - 400px/2 - 350px);
-    top: 125px;
+    width: 1125px;
+    height: 60px;
+
+    left: calc(50% - 550px);
+    top: 150px;
 
     border: 3px solid #FFB800;
     border-radius: 10px;
     text-align: center;
     vertical-align: center;
     font-weight: bold;
-    font-size : 50px;
+    font-size : 40px;
 }
 
 .pic-info {
-    /* 축제사진 */
-
     position: absolute;
-    width: 400px;
-    height: 450px;
-    left: calc(50% - 250px/2 - 350px);
-    top: 225px;
+    left: calc(50% - 550px);
+    top: 250px;
     border-radius: 5px;
-
     background: #D9D9D9;
 }
 
 .date-info {
-    /* 축제기간 */
-
     box-sizing: border-box;
 
     position: absolute;
-    width: 447px;
+    width: 550px;
     height: 65px;
-    left: calc(50% - 447px/2 + 350.5px);
+    left: calc(50% - 447px/2 + 247.5px);
     top: 270px;
 
     border: 3px solid #FFB800;
     border-radius: 10px;
     text-align: center;
-    vertical-align: center;
+    line-height: 55px;
     font-size : 30px;
 }
 
 .date-icon {
     position: absolute;
-    left: calc(50% - 430px/2 + 350.5px);
+    left: calc(50% - 430px/2 + 247.5px);
     top: 277.5px;
 }
 
@@ -58,21 +49,21 @@
     box-sizing: border-box;
 
     position: absolute;
-    width: 447px;
+    width: 550px;
     height: 65px;
-    left: calc(50% - 447px/2 + 350.5px);
+    left: calc(50% - 447px/2 + 247.5px);
     top: 370px;
 
     border: 3px solid #FFB800;
     border-radius: 10px;
     text-align: center;
-    vertical-align: center;
+    line-height: 55px;
     font-size : 30px;
 }
 
 .location-icon {
     position: absolute;
-    left: calc(50% - 430px/2 + 350.5px);
+    left: calc(50% - 430px/2 + 247.5px);
     top: 377.5px;
 }
 
@@ -80,21 +71,21 @@
     box-sizing: border-box;
 
     position: absolute;
-    width: 447px;
+    width: 550px;
     height: 65px;
-    left: calc(50% - 447px/2 + 350.5px);
+    left: calc(50% - 447px/2 + 247.5px);
     top: 470px;
 
     border: 3px solid #FFB800;
     border-radius: 10px;
     text-align: center;
-    vertical-align: center;
+    line-height: 55px;
     font-size : 30px;
 }
 
 .price-icon {
     position: absolute;
-    left: calc(50% - 420px/2 + 350.5px);
+    left: calc(50% - 420px/2 + 247.5px);
     top: 460px;
     font-size: 60px;
     font-weight: bold;
@@ -104,21 +95,21 @@
     box-sizing: border-box;
 
     position: absolute;
-    width: 447px;
+    width: 550px;
     height: 65px;
-    left: calc(50% - 447px/2 + 350.5px);
+    left: calc(50% - 447px/2 + 247.5px);
     top: 570px;
 
     border: 3px solid #FFB800;
     border-radius: 10px;
     text-align: center;
-    vertical-align: center;
+    line-height: 55px;
     font-size : 30px;
 }
 
 .phone-icon {
     position: absolute;
-    left: calc(50% - 430px/2 + 350.5px);
+    left: calc(50% - 430px/2 + 247.5px);
     top: 577.5px;
 }
 
@@ -130,27 +121,14 @@
     height: 209px;
     left: calc(50% - 1167px/2 - 9.5px);
     top: 725px;
+    font-size: 15px;
 
-    background: #D9D9D9;
-    border-radius: 20px;
-    text-align: center;
-    vertical-align: center;
-}
-
-.fstvl-icon {
-    position: absolute;
-    left: calc(50% - 1167px/2 - 9.5px);
-    top: 725px;
+    background: #eeeeee;
+    border-radius: 10px;
 }
 
 .Table_lo{
     position: absolute;
-    left: calc(50% - 1167px/2 - 9.5px);
-    top: 1000px;
-}
-
-.Table_time{
-    position: absolute;
-    left: calc(50% - 1167px/2 - 9.5px);
-    top: 725px;
+    left: calc(50% - 470px);
+    top: 950px;
 }

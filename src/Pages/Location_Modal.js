@@ -6,7 +6,6 @@ const Location_Modal = ({closeModal}) => {
     const [locationInput, setLocationInput] = useState('');
     const handleLocationInputChange = (event) => {setLocationInput(event.target.value)};
     const submitLocation = async () => {
-        console.log('Location submitted:', locationInput);
         await axios.put(`http://localhost:8080/main/${locationInput}`, {
             user_location: locationInput,
         }, {

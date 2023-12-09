@@ -18,7 +18,11 @@
     border-radius: 56px;
 }
 
-.date_icon {}
+.date_icon {
+    position: absolute;
+    left: calc(50% - 55px/2 - 345.5px);
+    top: 240px;
+}
 
 .date_search {
     /* 날짜 검색칸 */
@@ -68,11 +72,11 @@
     top: 327px;
     text-align: center;
     line-height: 63px;
-    font-size: 10px;
+    font-size: 20px;
+    color: #ffffff;
 
     background: rgba(0, 0, 0, 0.3);
     border-radius: 30px;
-
 }
 
 .search {
@@ -155,8 +159,7 @@
 .calendar_modal_size {
     position: absolute;
     text-align: center;
-    /*임시*/
-    left: 30%;
-    top: 30%;
-    /*임시*/
+
+    left: 39%;
+    top: 20%;
 }

@@ -22,13 +22,6 @@ function Detail() {
     const [trains, setTrains] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // useEffect(() => {
-    //     console.log(selection0);
-    // }, [selection0]);
-    // useEffect(() => {
-    //     console.log(selection1);
-    // }, [selection1]);
-
     const fetchData = async () => {
         try {
             setLoading(true);
@@ -94,13 +87,10 @@ function Detail() {
             <div className='phone-icon'>
                 <img src={process.env.PUBLIC_URL + '/phone.png'} width = '45px' height = '50px'/>
             </div>
-            <div className='fstvl-info'>{detailfstvl.text}</div>
-            <div className='fstvl-icon'>
-                <img src={process.env.PUBLIC_URL + '/information.png'} width = '65px' height = '50px'/>
-            </div>
+            <textarea className='fstvl-info'>{detailfstvl.text}</textarea>
             <div className="Table_lo" style={{ display: 'flex', flexDirection: 'row' }}>
                 {transformTrainData(trains).map((data, index) => (
-                    <div key={index} style={{ marginRight: '20px' }}>
+                    <div key={index} style={{marginTop:'50px', marginRight: '20px', marginBottom:'50px'}}>
                         <DataTable
                             headers={headers0}
                             items={[data.stations]}
