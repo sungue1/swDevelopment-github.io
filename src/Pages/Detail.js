@@ -29,11 +29,9 @@ function Detail() {
             setdetailFstvl(response_detail.data);
             const response_train = await axios.get(`http://localhost:8080/detail/${1}/${state.fstvl_id}`);
             setTrains(response_train.data);
-            console.log(response_train);
         } catch (error) {
             console.error("Error fetching data:", error);
         } finally {
-            console.log(trains);
             setLoading(false);
         }
     }
@@ -83,11 +81,11 @@ function Detail() {
             </div>
             <div className='price-info'>{detailfstvl.price}</div>
             <div className='price-icon'>$</div>
-            <div className='phone-info'>{detailfstvl.phone}</div>
+            <textarea className='phone-info'>{detailfstvl.phone}</textarea>
             <div className='phone-icon'>
                 <img src={process.env.PUBLIC_URL + '/phone.png'} width = '45px' height = '50px'/>
             </div>
-            <textarea className='fstvl-info'>{detailfstvl.text}</textarea>
+            <div className='fstvl-info'>{detailfstvl.text}</div>
             <div className="Table_lo" style={{ display: 'flex', flexDirection: 'row' }}>
                 {transformTrainData(trains).map((data, index) => (
                     <div key={index} style={{marginTop:'50px', marginRight: '20px', marginBottom:'50px'}}>
