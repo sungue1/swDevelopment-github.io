@@ -52,6 +52,7 @@ function Main() {
             keyWord = keyWordList.join();
             const response = await axios.post(`http://localhost:8080/main/${keyWord}/${calendarDate}`);
             setFstvl(response.data);
+            console.log(fstvls.title);
         } catch (error){
             console.log(error);
         } finally {
@@ -62,10 +63,8 @@ function Main() {
 
     const fetchData = async () => {
         try {
-            if(!fstvls) {
-                const response_fstvl = await axios.get('http://localhost:8080/main');
-                setFstvl(response_fstvl.data);
-            }
+            const response_fstvl = await axios.get('http://localhost:8080/main');
+            setFstvl(response_fstvl.data);
         } catch (error) {
             console.error('Error fetching data:', error);
         } finally {
